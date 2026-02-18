@@ -1,16 +1,15 @@
 # Functions go here
-def int_check(question, low, high):
+def int_check(question):
     """Checks users enter an integer between two values"""
 
-    error = f"Oops - please enter an integer between {low} and {high}"
-
+    error = f"Oops - please enter an integer higher than 0"
     while True:
 
         try:
             # Change the response to an integer and check that it's more than zero
             response = int(input(question))
 
-            if low <= response <= high:
+            if response >= 0:
                 return response
             else:
                 print(error)
@@ -80,4 +79,5 @@ while True:
 
     # ask user for payment method (cash / credit / ca / cr)
     pay_method = string_check("Payment method: ", payment_ans, 2)
+
     print(f"{name} has bought a ticket ({pay_method})")
